@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airport Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-size: 400% 400%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    
+    .typing-text {
+      height: 50px;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      animation: none;
+    }
+    
+    .planes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    
+    .plane {
+      position: absolute;
+      animation: fly linear infinite;
+      opacity: 0.7;
+    }
+    
+    @keyframes fly {
+      0% { transform: translateX(-100px) translateY(0); }
+      100% { transform: translateX(calc(100vw + 100px)) translateY(-100px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="planes">
+    
+  </div>
+
+  <div class="container">
+    <h1>Welcome to Airport Chatbot</h1>
+    <div class="typing-text" id="typing-text"></div>
+    <a href="chatbot.html" class="button" >Get Started</a>
+    <a href="about.html" class="button" >About us</a> 
+  </div>
+
+  <script>
+    
+    const text = "Hi! I can help with flight info, directions & more!";
+    const typingText = document.getElementById('typing-text');
+    let charIndex = 0;
+    
+    function typeText() {
+      if (charIndex < text.length) {
+        typingText.textContent += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 50);
+      }
+    }
+    
+   
+    window.addEventListener('load', () => {
+      setTimeout(typeText, 500);
+    });
+    
+    
+    const planesContainer = document.querySelector('.planes');
+    
+    function createPlane() {
+      const plane = document.createElement('div');
+      plane.classList.add('plane');
+      
+      
+      plane.innerHTML = `
+        <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38.976 38.976" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#fff;" d="M38.976,0.209L35.51,0.806l-9.12,7.552l-7.228-1.276l-6.296-1.116L7.07,4.937L3.109,8.313 l16.148,7.411l-9.66,11.755c-0.255,0.254-0.487,0.506-0.691,0.756l-6.035-2.452L0,28.654l6.453,2.957l0.271,0.271L4.686,34.12 l0.931,0.848l1.998-2.195l0.78,0.779l2.719,5.215l2.661-2.666l-3.104-6.138c0.158-0.11,0.311-0.231,0.448-0.373l12.534-9.847 l0.169,0.168l8.425,16.709l2.96-3.547l-1.209-6.192l-1.207-6.187l-1.593-8.157l-0.049-0.052l7.023-8.408L38.976,0.209z"></path> </g> </g></svg>
+      `;
+      
+     
+      const size = Math.random() * 30 + 20;
+      const top = Math.random() * 100;
+      const duration = Math.random() * 20 + 10;
+      const delay = Math.random() * 10;
+      
+      plane.style.top = `${top}%`;
+      plane.style.width = `${size}px`;
+      plane.style.height = `${size}px`;
+      plane.style.animationDuration = `${duration}s`;
+      plane.style.animationDelay = `${delay}s`;
+      
+      planesContainer.appendChild(plane);
+    }
+    
+    
+    for (let i = 0; i < 10; i++) {
+      createPlane();
+    }
+    
+   
+    document.getElementById('start-button').addEventListener('click', () => {
+      alert('Chatbot starting... This would connect to your airport chatbot service.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2948 @@
+{
+    "projectFileVersion": "2024-11-15-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0.7,
+            "normalizeCasing": false,
+            "augmentDiacritics": false
+        },
+        "projectName": "AirportFAQ-CLU",
+        "multilingual": false,
+        "description": "A conversational bot to assist travelers with flight and gate information at airports",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "FlightStatus"
+            },
+            {
+                "category": "GateStatus"
+            },
+            {
+                "category": "FlightDelay"
+            },
+            {
+                "category": "Greeting"
+            },
+            {
+                "category": "Locations"
+            },
+            {
+                "category": "Farewell"
+            },
+            {
+                "category": " FlightNumber"
+            },
+            {
+                "category": "FlightSchedule"
+            },
+            {
+                "category": "BaggageRules"
+            },
+            {
+                "category": " GateNumber"
+            }
+        ],
+        "entities": [
+            {
+                "category": "FlightNumber",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "FlightStatuslst",
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Unknown",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Unknown"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Expected",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Expected"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Delayed",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Delayed"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "On Time",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "On Time"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Departed",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Departed"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": " GateNumberlst",
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "109A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "109A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "108A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "108A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "107A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "107A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "106A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "106A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "105A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "105A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "104A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "104A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "103A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "103A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "102A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "102A"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "101A",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "101A"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "GateStatuslst",
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Unknown",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Unknown"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Boarding",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Boarding"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Open",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Open"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Closed",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Closed"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "utterances": [
+            {
+                "text": "Can you confirm the gate for BA105? Is it at A103?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 29,
+                        "length": 5
+                    },
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 45,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to know the gate for flight AF101, is it at 102A ?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 35,
+                        "length": 5
+                    },
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 51,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Does flight EK212 leave from gate 104A?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 34,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me if gate   108A is still open?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 26,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 40,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is boarding for flight EK306 happening at gate 12B?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 23,
+                        "length": 6
+                    },
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 47,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Do you know any good websites",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Tell me something interesti",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you recommend a good restaurant?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need some inspiration.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the weather like today?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Do you like reading books?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where are you from?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is it?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How are you today?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me a joke?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s your favorite color?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Do you like music?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is EK205 scheduled to depart on April 15?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 12,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When does flight LH760 leave from Riyadh?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 17,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A still open?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the status of gate 104A?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 26,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 107A closed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 9,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 14,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 105A open?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me the gate for flight TK1980?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 35,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Which gate is BA15 using?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 13,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need the gate number for flight SV120",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 34,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the gate for flight QR922?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 22,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What gate is flight EK404 departing from?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 20,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When will EY77 depart?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 10,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my flight AF118 on time?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 19,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight BA305 landed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 11,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is QR151 delayed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 3,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the status of flight EK202?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 29,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the gate for flight number EY888",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 35,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A available now",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 107A closed already",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate  104A still open",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 9,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 5A closed",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 3
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 12,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A open",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 8,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 13,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Tell me if flight EK420 is delayed.",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 18,
+                        "length": 5
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 27,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "uy454",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "er123",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "sv1023",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "SV 1023",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A open?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 13,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": " Is gate 108A open or closed?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 9,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 14,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 22,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the status of gate 105A?",
+                "language": "en-us",
+                "intent": " GateNumber",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 27,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is the status of my flight unknown?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 27,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the expected arrival time of XY 257?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 37,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Was flight F3 585 delayed ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 11,
+                        "length": 6
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 18,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight RJ908 on time?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 10,
+                        "length": 5
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 16,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight SV512 departed",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 17,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my flight delayed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 13,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has the flight F3 173 already left?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 15,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Will my flight arrive as expected?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 25,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "\"What is the status of flight F3 173?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "\"Is flight RJ908 delayed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 11,
+                        "length": 5
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 17,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has my flight F3 173 departed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my flight on time",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 101A open?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 13,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is Gate 105A ready for boarding?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    },
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 23,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my gate closed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 11,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is my gate?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has my gate changed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my gate open?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 11,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the gate for XY 93?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 22,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the status of flight F3 173?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 29,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has J9 230 departed?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 4,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is anyone there?",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Good day!",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Help!",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Nice to meet you",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the next available flight to Bahrain?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there any flights from Riyadh to London tomorrow?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What flights are scheduled from Riyadh next weekend?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I check flights departing from Riyadh next Monday?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is the earliest flight to Cairo from Riyadh?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is the next Flynas flight from Riyadh?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What are the scheduled flights for Saudi Airlines today?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight EK405 already departed?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 11,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time should I be at the airport for my flight?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my flight delayed or on time?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How long until flight BA600 arrives?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the scheduled landing time for QR123?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight TK789 arriving on time?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When will flight SV201 land?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight EY320 on schedule for departure?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is the last flight to Dammam today?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me the flight schedule for today?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the departure time of SV102?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 30,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is the next flight from Riyadh to Dubai?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time does flight QR450 arrive in Riyadh?",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring sports equipment or musical instruments?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there restrictions on carrying medicines?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring food in my luggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are power banks allowed in checked baggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I travel with my pet in the cabin?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there liquid restrictions for carry-on bags?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I carry a backpack and a small suitcase?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring a laptop bag in addition to my carry-on?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are duty-free purchases counted as carry-on luggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What items are allowed in my carry-on bag?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the fee for overweight luggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How do I pay for excess baggage at the airport?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is there a limit to how much extra baggage I can bring?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I purchase additional baggage allowance online?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How much does extra baggage cost?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I check in overweight luggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What happens if my baggage exceeds the weight limit?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring two carry-on bags?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the weight limit for carry-on bags?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring an oversized bag on my flight?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is there a size restriction for carry-on luggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How much weight can I check in for free?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the free baggage allowance for my flight?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there any restrictions on baggage for my airline?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What are the baggage rules for international flights?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What are the baggage rules for domestic flights?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I bring a carry-on bag and a personal item?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the maximum size allowed for checked baggage?",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Later",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I’m done, thanks for your help",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I’m good now, goodbye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Thank you, that’s all I needed",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I’m signing off, bye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Bye for now",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "No more questions, thank you",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Goodbye, I appreciate your support",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Thanks for your help, bye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I’m done, bye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Thanks, goodbye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "That’s all, thank you",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Take care",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How many bags can I carry",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What are the baggage weight limits",
+                "language": "en-us",
+                "intent": "BaggageRules",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the arrival time of BA 321",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time does flight EK201 leave",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 22,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is my flight departing",
+                "language": "en-us",
+                "intent": "FlightSchedule",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "F3 585 is my flight. What’s the gate?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is flight VS 999 departing from?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 16,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need my gate for flight BA 876",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 26,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you find my gate for flight KLM 440?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 32,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "My flight is AC555, where do I board?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 13,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight IB710 delayed?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 10,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need information about flight EY333",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 32,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Check gate status for SQ902",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 22,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "The flight I’m taking is CX890",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 25,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Please check flight AF220 for gate information",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 20,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'm flying on LH567",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 14,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "BA321 is my flight. Where is my gate?",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 0,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the status of flight AA789",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 29,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I have a flight with number QR405",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 28,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you check my gate for EK201",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 26,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "My flight number is SV1023",
+                "language": "en-us",
+                "intent": " FlightNumber",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 20,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Thanks, bye!",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "See you later",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "goodbye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "bye",
+                "language": "en-us",
+                "intent": "Farewell",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I access the Riyadh Metro from the departure hall?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the Riyadh Metro station located at King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How do I reach the Riyadh Metro after landing at King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the Riyadh Metro station at King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How do I get to the metro from Terminal 3 in Riyadh airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I find the information desk in King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is security check for international flights in King Abdulaziz Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How do I get from Terminal 1 to Terminal 3 in King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the VIP lounge in King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I find currency exchange in Jeddah airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I find baggage claim at King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I charge my phone in King Khalid Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the international terminal at Dammam airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I find domestic flights terminal in Jeddah airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is the departure lounge in Riyadh airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where can I find the arrivals hall at King Fahd Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How do I get to terminal 1 in King Abdulaziz Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Where is gate 5 in King Khalid International Airport?",
+                "language": "en-us",
+                "intent": "Locations",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hello, greetings",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hi, good day",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hey, good evening",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hello, good afternoon",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hi, good morning",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hello, there",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Greetings",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Good day",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Evening",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Morning",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Good evening",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Good afternoon",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Good morning",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hi there",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hey there",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hey",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hi",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Hello",
+                "language": "en-us",
+                "intent": "Greeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has the delay for flight QR556 been resolved?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 25,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Did flight WY330 get delayed due to technical issues?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 10,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "How much longer will flight FZ112 be delayed?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 28,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there weather-related delays affecting flight RJ908?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 49,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is flight KU104 expected to depart after the delay?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight ME602 facing any unexpected delays?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the estimated delay time for flight GF210?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 42,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is the departure of flight EY789 postponed?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 27,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Could you confirm if flight SV320 is experiencing delays?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 28,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there any updates on the delay for flight TK450?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 46,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight RJ908 expected to arrive earlier or later than scheduled?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the boarding status of flight WY320?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 37,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight FZ450 been rescheduled or is it on time?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 43,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Could you provide the latest update for flight SV102?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 47,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is there a gate change for my flight?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A closed due to weather?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s the current status of gate 1?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 5 available for passengers?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there any updates for gate 3?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 12 been reassigned?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you confirm if gate 9 is active?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are flights boarding at gate 6 on time?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is there a delay at gate 4?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has my gate been changed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Which gate is flight 108A departing from?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 21,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 104A closed for security reasons?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I access gate 101A right now?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 18,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 102A  ready for departure?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is boarding at gate 103A delayed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 104A reopened?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 9,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 105A accessible?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What’s happening at gate 106A?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 25,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 103A been changed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I board from gate 11 now?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 106A under maintenance?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Are there any issues with gate 2?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 9 been moved?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 1 operating normally?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Which gate is currently open for flight XY 203?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 40,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 104A delayed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 8,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me if gate 107A is boarding?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 24,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has gate 103A been closed?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": " GateNumberlst",
+                        "offset": 9,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is gate 12 open?",
+                "language": "en-us",
+                "intent": "GateStatus",
+                "entities": [
+                    {
+                        "category": "GateStatuslst",
+                        "offset": 11,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time will flight AF301 land after the delay ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 22,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "How long is the delay for flight OZ203 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 33,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "When will flight EK404 take off after the delay ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 17,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the reason for the delay of flight AI110 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight NZ801 been delayed ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight UA123 delayed or on time?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time will flight ? KL905 arrive due to the delay",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How late is flight LX452 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When will flight EK501 take off now ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight AC305 running late ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What caused the delay for flight CX406 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight VS210 been delayed",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "How much delay is there for flight BA987 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me if flight AF102 is delayed ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 26,
+                        "length": 5
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 35,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the new departure time for flight QR345 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight EK200 delayed today ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 16,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "How long is the delay for flight LH101 ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Why is flight DL789 delayed ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight UA456 been delayed ?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight AA123 delayed?",
+                "language": "en-us",
+                "intent": "FlightDelay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight UA456 on time ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 16,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight DL789 landed ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When does flight LH101 depart?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight EK200 delayed ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight BA987 arriving on schedule ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When will flight CX406 land ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight AC305 delayed ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you tell me the status of flight EK501 ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When is flight KL905 expected to arrive ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight UA123 arriving early ?",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight AI110 been delayed",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 11,
+                        "length": 5
+                    },
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 22,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight EK404 still on time",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 22,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you check the current status of flight AF301",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightNumber",
+                        "offset": 43,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the status of flight AA123",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight UA456 on time",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Has flight DL789 landed",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "When does flight LH101 depart",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is flight EK200 delayed",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [
+                    {
+                        "category": "FlightStatuslst",
+                        "offset": 16,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Is my flight delayed",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is my flight status    ",
+                "language": "en-us",
+                "intent": "FlightStatus",
+                "entities": [],
+                "dataset": "Train"
+            }
+        ]
+    }
+}

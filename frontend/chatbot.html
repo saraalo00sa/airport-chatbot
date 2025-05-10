@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airport Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon">✈️</div>
+      <a href="index.html" class="logo-text">Airport Buddy</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <button class="new-chat">
+        <span class="new-chat-icon">+</span>
+        <span>New chat</span>
+      </button>
+      <div class="chat-history"></div>
+      <div class="settings"></div>
+    </div>
+
+    <div class="chat-container">
+      <div id="chat-view" class="chat-messages" style="display: none;"></div>
+
+      <div id="welcome-view" class="welcome-container">
+        <div class="welcome-icon">✈️</div>
+        <h1 class="welcome-title">👋 Welcome to the airport assistant! How can I help you?</h1>
+        <p class="welcome-text">Ask me about flight information, airport navigation, baggage services, or anything else.</p>
+        <div class="suggestions">
+          <div class="suggestion-item">Expected departure time?</div>
+          <div class="suggestion-item">Is my flight on time?</div>
+          <div class="suggestion-item">Where is my gate?</div>
+          <div class="suggestion-item">Baggage allowance?</div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <div class="input-box">
+          <textarea class="input-textarea" placeholder="Ask about flights, directions, services..."></textarea>
+          <div class="input-icon">🎤</div>
+          <div class="input-icon input-send">➤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const apiUrl = "https://studentbot-bka6hqa7h2amhuam.canadacentral-01.azurewebsites.net/api/messages";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const chatView = document.getElementById('chat-view');
+      const welcomeView = document.getElementById('welcome-view');
+      const textarea = document.querySelector('.input-textarea');
+      const sendButton = document.querySelector('.input-send');
+      const suggestionItems = document.querySelectorAll('.suggestion-item');
+      const newChatButton = document.querySelector('.new-chat');
+
+      // Auto-resize textarea when user types
+      textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      });
+
+      // Switch to chat view when a message is sent
+      function showChatView() {
+        welcomeView.style.display = 'none';
+        chatView.style.display = 'flex';
+      }
+
+      // Reset to welcome view for a new chat
+      function showWelcomeView() {
+        welcomeView.style.display = 'flex';
+        chatView.style.display = 'none';
+        chatView.innerHTML = ''; // Clear chat history
+      }
+
+      // Function to send user message to the bot
+      async function sendMessage() {
+        const message = textarea.value.trim();
+        if (message) {
+          const userMessage = createMessage(message, true);
+          chatView.appendChild(userMessage);
+          textarea.value = '';
+          textarea.style.height = 'auto';
+          showChatView();
+          chatView.scrollTop = chatView.scrollHeight;
+
+          // Display typing indicator
+          const typingIndicator = document.createElement('div');
+          typingIndicator.className = 'message';
+          typingIndicator.innerHTML = `<div class="message-avatar">✈️</div><div class="message-content"><div class="message-typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
+          chatView.appendChild(typingIndicator);
+          chatView.scrollTop = chatView.scrollHeight;
+
+          try {
+            const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ message })
+            });
+
+            // Process response from API
+            if (response.ok) {
+              const data = await response.json();
+              chatView.removeChild(typingIndicator);
+              const botMessage = createMessage(data.response || "I'm sorry, I didn't understand that.", false);
+              chatView.appendChild(botMessage);
+              chatView.scrollTop = chatView.scrollHeight;
+            } else {
+              throw new Error('Failed to fetch response');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            chatView.removeChild(typingIndicator);
+            chatView.appendChild(createMessage("Sorry, an error occurred. Please try again.", false));
+          }
+        }
+      }
+
+      // Create chat message element
+      function createMessage(text, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message';
+        messageDiv.innerHTML = `<div class="message-avatar ${isUser ? 'user' : ''}">${isUser ? 'U' : '✈️'}</div><div class="message-content"><div class="message-text">${text}</div></div>`;
+        return messageDiv;
+      }
+
+      // Event Listeners
+      sendButton.addEventListener('click', sendMessage);
+      textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+      suggestionItems.forEach(item => {
+        item.addEventListener('click', () => {
+          textarea.value = item.textContent;
+          sendMessage();
+        });
+      });
+      newChatButton.addEventListener('click', showWelcomeView);
+    });
+  </script>
+</body>
+</html>
